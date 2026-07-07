@@ -15,7 +15,7 @@ spec:
       containers:
         - name: testapp
           image: dadosha551/argocd-testapp:1.0
-          # образ импортирован в k3d локально (registry нет) — иначе ErrImagePull
+          # образ из Docker Hub (dadosha551/argocd-testapp); не перекачивать, если уже скачан в ноду
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
