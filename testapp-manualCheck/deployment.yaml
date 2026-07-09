@@ -21,4 +21,4 @@ spec:
             - containerPort: 8080
           env:
             - name: VERSION
-              value: "manualTestV2"
+              value: "manualTestV3"
