@@ -7,11 +7,11 @@ spec:
   progressDeadlineSeconds: 30
   selector:
     matchLabels:
-      app: testapp-force
+      app: testapp
   template:
     metadata:
       labels:
-        app: testapp-force
+        app: testapp
     spec:
       containers:
         - name: testapp
