@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testapp-second
+spec:
+  replicas: 1
+  progressDeadlineSeconds: 30
+  selector:
+    matchLabels:
+      app: testapp-second
+  template:
+    metadata:
+      labels:
+        app: testapp-second
+    spec:
+      terminationGracePeriodSeconds: 1
+      containers:
+        - name: testapp-second
+          image: dadosha551/argocd-testapp:1.1
+          # образ из Docker Hub (dadosha551/argocd-testapp); не перекачивать, если уже скачан в ноду
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: VERSION
+              value: "v1"

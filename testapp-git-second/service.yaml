@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: testapp-second
+spec:
+  selector:
+    app: testapp-second
+  ports:
+    - port: 80
+      targetPort: 8080
